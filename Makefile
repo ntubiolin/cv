@@ -29,10 +29,10 @@ $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
 public: $(BUILD_DIR) $(TEMPLATES) $(YAML_FILES) generate.py
-	./generate.py cv.yaml
+	/Users/linyusheng/miniconda3/envs/cv/bin/python ./generate.py cv.yaml
 
 $(TEX) $(MD): $(TEMPLATES) $(YAML_FILES) generate.py publications/*.bib
-	./generate.py $(YAML_FILES)
+	/Users/linyusheng/miniconda3/envs/cv/bin/python ./generate.py $(YAML_FILES)
 
 $(PDF): $(TEX)
 	# TODO: Hack for biber on OSX.
